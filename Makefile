@@ -1,0 +1,5 @@
+
+build:
+	go install -v ./...
+
+
