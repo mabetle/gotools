@@ -54,14 +54,14 @@ func main() {
 		if _, err := os.Stat(fp); err != nil {
 			// create fp
 			if err := os.MkdirAll(fp, 0755); err != nil {
-				fmt.Println("create %s path %s error: %v", file, fp, err)
+				fmt.Printf("create %s path %s error: %v\n", file, fp, err)
 				continue
 			}
 		}
 
 		// write blank file
 		if err := ioutil.WriteFile(file, []byte(""), 0755); err != nil {
-			fmt.Println("create %s error: %v", file, err)
+			fmt.Printf("create %s error: %v\n", file, err)
 			continue
 		}
 
