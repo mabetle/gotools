@@ -38,6 +38,9 @@ func main() {
 	for _, file := range files {
 		file = strings.ReplaceAll(file, "\\", "/")
 
+		// expand env, file can use env
+		file = os.ExpandEnv(file)
+
 		if !strings.HasPrefix(file, "/") {
 			file = filepath.Join(wd, file)
 		}
